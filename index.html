@@ -14,29 +14,30 @@
 
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
-      <a class="nav-pill" href="#introduction">introduction</a>
+      <a class="nav-pill" href="#top">home</a>
+      <a class="nav-pill" href="#introduction">intro</a>
       <a class="nav-pill" href="#artists">artists</a>
-      <a class="nav-pill" href="#artworks">artworks</a>
+      <a class="nav-pill is-hidden" href="#artworks">artworks</a>
       <a class="nav-pill" href="#events">events</a>
-      <a class="nav-pill" href="#information">information</a>
+      <a class="nav-pill" href="#information">info</a>
     </nav>
   </header>
 
   <main class="page-shell">
-    <section class="hero-section" id="top">
-      <div class="hero-word-cluster" aria-label="Care Code Culture">
-        <div class="hero-word hero-word-care">care</div>
-        <div class="hero-word hero-word-code">code</div>
-        <div class="hero-word hero-word-culture">culture</div>
-      </div>
-      <a class="hero-register" href="#events">register for workshops</a>
-    </section>
+	    <section class="hero-section" id="top">
+	      <div class="hero-word-cluster" aria-label="Care Code Culture">
+	        <div class="hero-word hero-word-care">care</div>
+	        <div class="hero-word hero-word-code">code</div>
+	        <div class="hero-word hero-word-culture">culture</div>
+	      </div>
+	      <a class="hero-register" href="#events">see full program details</a>
+	    </section>
 
     <section class="content-section intro-section" id="introduction">
       <h2 class="section-title"><span class="section-title-prefix">_</span>introduction</h2>
-      <div class="intro-copy">
-        <p>
-          This exhibition gathers six research-led works that explore what is often overlooked.
+	      <div class="intro-copy">
+	        <p>
+	          This exhibition gathers six research-led works that explore what is often overlooked.
           In a landscape where technology is driven by efficiency and visibility, these projects
           turn instead to the quiet infrastructures of everyday life.
         </p>
@@ -47,21 +48,24 @@
           investigation and experience, inviting audiences to spend time with what is usually
           passed over.
         </p>
-        <p>
-          A series of workshops and talks extends the exhibition into a shared space for
-          discussing processes, research methods, and conversations with the wider creative
-          technology community.
-        </p>
-      </div>
-    </section>
+	        <p>
+	          A series of workshops and talks extends the exhibition into a shared space for
+	          discussing processes, research methods, and conversations with the wider creative
+	          technology community.
+	        </p>
+	        <a class="section-action" href="https://carecodeculture-exhibition.peatix.com" target="_blank" rel="noopener noreferrer">add event to calendar</a>
+	      </div>
+	    </section>
+
+	    <a class="hero-register hero-register-mobile" href="#events">see full program details</a>
 
     <section class="content-section artists-section" id="artists">
       <h2 class="section-title"><span class="section-title-prefix">_</span>artists</h2>
       <div class="artists-layout">
         <div class="artist-list" id="artist-list" role="tablist" aria-label="Artist lineup">
-          <button class="artist-option" type="button" data-artist="jade-sia" role="tab" aria-selected="false">Jade Sia</button>
+          <button class="artist-option is-selected" type="button" data-artist="jade-sia" role="tab" aria-selected="true">Jade Sia</button>
           <button class="artist-option" type="button" data-artist="khuu-thuy-linh" role="tab" aria-selected="false">Khuu Thuy Linh</button>
-          <button class="artist-option is-selected" type="button" data-artist="ly-du-khanh-han" role="tab" aria-selected="true">Ly Du Khanh Han</button>
+          <button class="artist-option" type="button" data-artist="ly-du-khanh-han" role="tab" aria-selected="false">Ly Du Khanh Han</button>
           <button class="artist-option" type="button" data-artist="matsurah-maidin" role="tab" aria-selected="false">Masturah Maidin</button>
           <button class="artist-option" type="button" data-artist="mega-mario" role="tab" aria-selected="false">Mega Mario</button>
           <button class="artist-option" type="button" data-artist="pann-lim" role="tab" aria-selected="false">Pann Lim</button>
@@ -78,27 +82,27 @@
         </div>
 
         <article class="artist-detail" id="artist-detail">
-          <h3 class="artist-name" id="artist-name">LY DU KHANH HAN</h3>
+          <h3 class="artist-name" id="artist-name">JADE SIA</h3>
           <p class="artist-title" id="artist-title">
-            Interdisciplinary Designer &amp; Researcher<br>
+            Art Director &amp; Researcher<br>
             LASALLE College of the Arts (MA Design), Singapore
           </p>
           <p class="artist-description" id="artist-description">
-            Ly Du Khanh Han is a Vietnamese designer-researcher and interdisciplinary creative
-            based in Singapore, currently pursuing an MA in Design at LASALLE College of the Arts.
-            Han's research investigates the design of play as a mode of engagement and participation,
-            particularly how play can function as a methodological tool for community-driven approaches
-            to archiving and cultural continuity. Across their broader practice, Han works at the
-            intersection of screenwriting, animation, and game design, with a longstanding interest
-            in how interactivity reshapes narrative form. With experience in creative coding and
-            interactive prototyping, Han's practice bridges narrative research and implementation,
-            treating tools and systems as spaces for experimental inquiry. Website: www.haanly.com
+            Jade Sia is an award-winning designer with a decade of global experience in branding
+            and motion graphics. Her practice is defined by a blend of technical precision and
+            visual fluidity, crafting narratives that resonate on both strategic and emotional
+            levels. Currently pursuing a Master of Design at LASALLE College of the Arts, Jade is
+            pivoting her expertise into spatial and speculative design. Her project, The Family Hub,
+            introduces a systemic approach to urban care, merging technical guidelines, digital
+            narratives, and physical prototypes. By reimagining public infrastructure as an
+            integrated system of empathy, she seeks to redefine how design can foster social equity
+            and human connection. Website: https://www.thesiaaa.com/
           </p>
         </article>
       </div>
     </section>
 
-    <section class="content-section artworks-section" id="artworks">
+    <section class="content-section artworks-section is-hidden" id="artworks">
       <h2 class="section-title"><span class="section-title-prefix">_</span>artworks</h2>
       <div class="artwork-carousel" aria-label="Artwork carousel">
         <div class="artwork-track">
@@ -151,23 +155,35 @@
     <section class="content-section information-section" id="information">
       <h2 class="section-title"><span class="section-title-prefix">_</span>information</h2>
       <div class="information-layout">
-        <div class="information-copy">
-          <p>Opening time: 9:00 AM - 5:00 PM</p>
-          <p>Dates: 8 - 11.8.2026</p>
-          <p>Location: #02-05, Aliwal Arts Centre</p>
-          <p>Contact: carecodeculture@gmail.com</p>
-          <p class="information-note">
-            This event and all workshops are free entry! Slots in workshop are available upon
-            registration.
-          </p>
-        </div>
-        <div class="map-panel" aria-label="Map placeholder">
-          <div class="map-grid"></div>
-          <div class="map-route map-route-a"></div>
-          <div class="map-route map-route-b"></div>
-          <div class="map-pin">ALIWAL</div>
-        </div>
-      </div>
+	        <div class="information-copy">
+	          <p>Opening time: 9:00 AM - 5:00 PM</p>
+	          <p>Dates: 8 - 11.8.2026</p>
+		          <p>Location: Arts x Tech Lab, 28 Aliwal St, #02-05 Aliwal Arts Centre, Singapore</p>
+	          <p>Contact: carecodeculture@gmail.com</p>
+	          <p class="information-note">
+	            This event and all workshops are free entry! Slots in workshop are available upon
+	            registration.
+	          </p>
+	          <a class="section-action" href="https://carecodeculture-exhibition.peatix.com" target="_blank" rel="noopener noreferrer">add event to calendar</a>
+	        </div>
+	        <div class="map-panel" aria-label="Google Map preview of Aliwal Arts Centre">
+	          <iframe
+	            class="map-embed"
+	            title="Google Map preview of Aliwal Arts Centre"
+	            loading="lazy"
+	            allowfullscreen
+	            referrerpolicy="strict-origin-when-cross-origin"
+	            src="https://www.google.com/maps?q=Aliwal+Arts+Centre,+28+Aliwal+Street,+Singapore+199918&z=17&output=embed">
+	          </iframe>
+	          <a
+	            class="map-open-link"
+	            href="https://maps.app.goo.gl/udp5cwq575D3G1Ui9"
+	            target="_blank"
+	            rel="noopener noreferrer">
+	            open in google maps
+	          </a>
+	        </div>
+	      </div>
     </section>
   </main>
 
@@ -176,9 +192,8 @@
     <div class="footer-content">
       <span class="footer-pill">follow us on</span>
       <div class="footer-links">
-        <a href="#" aria-label="Instagram">instagram</a>
-        <a href="#" aria-label="Facebook">facebook</a>
-        <a href="#" aria-label="YouTube">youtube</a>
+        <a href="https://www.instagram.com/care_code_culture/" aria-label="Instagram">instagram</a>
+        <a href="https://carecodeculture.peatix.com/" aria-label="Peatix">peatix</a>
       </div>
     </div>
   </footer>

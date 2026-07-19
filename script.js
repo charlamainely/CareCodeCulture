@@ -1,8 +1,13 @@
 const canvas = document.getElementById("ascii-rain");
 const context = canvas.getContext("2d");
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const navLinks = Array.from(document.querySelectorAll(".nav-pill"));
-const trackedSections = Array.from(document.querySelectorAll(".content-section"));
+const navLinks = Array.from(document.querySelectorAll(".nav-pill:not(.is-hidden)"));
+const trackedSections = navLinks
+  .map((link) => {
+    const href = link.getAttribute("href");
+    return href?.startsWith("#") ? document.querySelector(href) : null;
+  })
+  .filter((section) => section && section.id !== "top");
 const heroSection = document.getElementById("top");
 
 const glyphs = "01[]{}<>/\\|!;:+=-*#@&CARE.CODE.CULTURE";
@@ -150,13 +155,15 @@ const eventReadMore = document.getElementById("event-read-more");
 const eventRegister = document.getElementById("event-register");
 
 let selectedDay = "2026-08-08";
-let selectedSlotIndex = 2;
+let selectedSlotIndex = 0;
 let descriptionExpanded = false;
 let artistTypingToken = 0;
 let eventTypingToken = 0;
 let activeArtistTyping = null;
 let activeEventTyping = null;
 let artistImageLoadToken = 0;
+const defaultArtistId = artistButtons[0]?.dataset.artist || "jade-sia";
+const defaultDayId = dayButtons[0]?.dataset.day || selectedDay;
 
 function randomGlyph() {
   return glyphs[Math.floor(Math.random() * glyphs.length)];
@@ -166,10 +173,15 @@ function updateNavState() {
   const headerOffset = 110;
   const heroBottom = heroSection.offsetTop + heroSection.offsetHeight - headerOffset;
   const position = window.scrollY + headerOffset;
+  const viewportBottom = window.scrollY + window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
 
   if (position < heroBottom) {
     document.body.classList.add("is-hero-nav");
-    navLinks.forEach((link) => link.classList.remove("is-active"));
+    navLinks.forEach((link) => {
+      const targetId = link.getAttribute("href")?.slice(1);
+      link.classList.toggle("is-active", targetId === "top");
+    });
     return;
   }
 
@@ -182,6 +194,12 @@ function updateNavState() {
       activeId = section.id;
     }
   });
+
+  // Keep the last nav item in sync when the page bottom is reached before
+  // the sticky-header threshold can cross the final section top.
+  if (viewportBottom >= documentHeight - 2) {
+    activeId = trackedSections.at(-1)?.id || activeId;
+  }
 
   navLinks.forEach((link) => {
     const targetId = link.getAttribute("href")?.slice(1);
@@ -620,7 +638,8 @@ eventReadMore.addEventListener("click", () => {
 
 setCanvasSize();
 syncAnimationMode();
-renderArtist("ly-du-khanh-han");
+selectedDay = defaultDayId;
+renderArtist(defaultArtistId);
 renderEvents();
 updateNavState();
 
